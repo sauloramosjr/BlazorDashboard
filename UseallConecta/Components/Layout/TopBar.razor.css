@@ -1,0 +1,33 @@
+.top-bar {
+  background: linear-gradient(
+    to right,
+    #6051e6 6%,
+    #5966e7 25%,
+    #4f81e9 55%,
+    #499bea 69%,
+    #43a5eb 83%,
+    #3bbeec 99%
+  );
+  width: 100%;
+  height: 60px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nome-empresa {
+  color: white;
+}
+.user-info {
+  opacity: 0;
+  user-select: none;
+}
+@media (min-width: 641px) {
+  .user-info {
+    opacity: 1;
+    user-select: all;
+  }
+  .top-bar {
+    height: 80px;
+  }
+}

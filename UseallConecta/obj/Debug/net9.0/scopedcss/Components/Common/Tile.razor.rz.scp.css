@@ -1,0 +1,22 @@
+.tile[b-dda526mhcv] {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (min-width: 641px) {
+  .tile[b-dda526mhcv] {
+    width: 350px;
+  }
+}
+
+.tile-header[b-dda526mhcv] {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 62px;
+}
+.tile-header span[b-dda526mhcv] {
+  color: white;
+}

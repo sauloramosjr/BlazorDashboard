@@ -1,0 +1,17 @@
+@rendermode InteractiveServer
+
+<input @bind="isChecked" type="checkbox" title="Navigation menu" class="navbar-toggler" />
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+        <button @onclick="ModalClick" class="nav-modal"></button>
+
+        @code{
+private bool isChecked = false;
+
+private void ModalClick(){  
+    isChecked = false;
+}
+
+    
+}

@@ -1,0 +1,18 @@
+@using Microsoft.AspNetCore.Components.Routing
+
+<div class="nav-item">
+    <NavLink class="nav-link" href="@Href" Match="@Match">
+        @ChildContent
+        @Text
+    </NavLink>
+</div>
+
+@code {
+    [Parameter] public string Href { get; set; } = "/";
+    [Parameter] public string Text { get; set; } = "Home";
+    [Parameter] public NavLinkMatch Match { get; set; } = NavLinkMatch.Prefix;
+    [Parameter] public string? Style { get; set; }
+
+    // Este parâmetro permite o conteúdo filho
+    [Parameter] public RenderFragment ChildContent { get; set; }
+}

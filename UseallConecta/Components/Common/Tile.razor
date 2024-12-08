@@ -1,0 +1,19 @@
+<div class="tile" style="border: 1px solid @Color;">
+    <div class="tile-header" style="background: @Color;">
+        <span>@Titulo</span>
+        <span style="font-size: 12px;">@SubTitulo</span>
+    </div>
+    <div style="padding:10px">@ChildContent</div>
+</div>
+
+
+
+@code {
+    [Parameter] public string Titulo { get; set; } = "Nova Tile";
+    [Parameter] public string Href { get; set; } = "/";
+    [Parameter] public string? SubTitulo { get; set; }
+    [Parameter] public string Color { get; set; }="red";
+
+    // Este parâmetro permite o conteúdo filho
+    [Parameter] public RenderFragment ChildContent { get; set; }
+}
