@@ -1,11 +1,26 @@
-<div class="top-bar">
-    <div></div>
+@inject DrawerService drawerService
+@inject IJSRuntime JSRuntime
+@rendermode InteractiveServer
+<MudAppBar Color="Color.Primary" Fixed="false" >
+    <MudIconButton OnClick="@ToggleDrawer" Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" />
+    <MudSpacer />
     <span class="nome-empresa">
         Useall - Useall
     </span>
-    <div class="user-info">
+    <MudSpacer />
+    <MudIconButton Icon="@Icons.Material.Rounded.AccountCircle" Color="Color.Inherit" />
+</MudAppBar>
 
-    <i style="font-size: 50px; color:white;" class="material-icons">account_circle
-</i>
-    </div>
-</div>
+
+@code {
+    private void ToggleDrawer()
+    {
+       this.ShowMessage();
+        drawerService.Toggle();
+    }
+        private void ShowMessage()
+    {
+        JSRuntime.InvokeVoidAsync("showMessage", "Mensagem enviada para o console!");
+    }
+
+}

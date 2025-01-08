@@ -1,0 +1,6 @@
+D:\BlazorDashboard\obj\Debug\net8.0\UseallConecta.GeneratedMSBuildEditorConfig.editorconfig
+D:\BlazorDashboard\obj\Debug\net8.0\UseallConecta.AssemblyInfoInputs.cache
+D:\BlazorDashboard\obj\Debug\net8.0\UseallConecta.AssemblyInfo.cs
+D:\BlazorDashboard\obj\Debug\net8.0\UseallConecta.csproj.CoreCompileInputs.cache
+D:\BlazorDashboard\obj\Debug\net8.0\UseallConecta.MvcApplicationPartsAssemblyInfo.cache
+D:\BlazorDashboard\obj\Debug\net8.0\UseallConecta.sourcelink.json

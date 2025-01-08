@@ -2,6 +2,10 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  height:100%;
+}
+.content{
+  padding-left:65px!important;
 }
 
 main {

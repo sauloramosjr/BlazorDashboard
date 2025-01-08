@@ -1,0 +1,23 @@
+@inject NavigationManager NavigationManager
+@page "/chat"
+
+<PageTitle>Chat 💬</PageTitle>
+<h3>Página chat</h3>
+
+<p>Token: @Token</p>
+
+@code {
+    private string? Token;
+
+    protected override void OnInitialized()
+    {
+        // Obter a URL atual
+        var uri = NavigationManager.ToAbsoluteUri(NavigationManager.Uri);
+
+        // Extrair o parâmetro "token" da query string
+        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("token", out var tokenValue))
+        {
+            Token = tokenValue;
+        }
+    }
+}

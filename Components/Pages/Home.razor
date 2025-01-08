@@ -1,7 +1,9 @@
 ﻿@page "/"
-@using UseallConecta.Components.Common
+@inject NavigationManager NavigationManager
+
 
 <PageTitle>Home</PageTitle>
+<p>Token: @Token</p>
 <div class="tiles" >
 
 <Tile Titulo="Chats"  Href="" Color="green">
@@ -17,3 +19,19 @@
     <div>Agenda aqui</div>
 </Tile>
 </div>
+
+@code {
+    private string? Token;
+
+    protected override void OnInitialized()
+    {
+        // Obter a URL atual
+        var uri = NavigationManager.ToAbsoluteUri(NavigationManager.Uri);
+
+        // Extrair o parâmetro "token" da query string
+        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("token", out var tokenValue))
+        {
+            Token = tokenValue;
+        }
+    }
+}

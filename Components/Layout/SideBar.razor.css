@@ -51,7 +51,7 @@
 
 @media (min-width: 641px) {
   .sidebar {
-    width: 60px;
+    min-width: 50px;
     position: relative;
   }
   .navbar-toggler {

@@ -1,61 +1,35 @@
-﻿@using UseallConecta.Components.Layout
-
-<div class="info-usuario" >
-    <div>
-<i style="font-size: 80px; color:white;" class="material-icons">account_circle
-</i>
-
-  
-    </div>
-    <div style="width:180px; color:white">
- 
-
-   <div style="font-size: 16px;text-overflow: ellipsis; width: 100%; overflow: hidden;white-space:nowrap; font-weight: 600;">
-        Saulo Adriano Ramos Junior
-    </div>
-    <div style="font-size: 14px;" >
-        UseallSoftware
-    </div>
-    </div>
-</div>
-
-
-<div class="nav-scrollable">
-    <nav class="nav flex-column">
-        <NavItem Href="/" Text="Chat" Match="NavLinkMatch.All" >
- <i class="material-icons">chat</i>
-
-        </NavItem>
-        <NavItem Href="counter" Text="Mensagens" >
-<i class="material-icons">mail</i>
+﻿@inject DrawerService drawerService
+@rendermode InteractiveServer
+<MudPaper Height="100%" Style=" position:relative;">
+    <MudDrawerContainer Class="mud-height-full">
+        <MudDrawer @bind-Open="@drawerService.IsOpen" Fixed="false" Elevation="1"  Variant="@(DrawerVariant.Mini )" Color="Color.Primary" OpenMiniOnHover="false">
+            <MudNavMenu Bordered='true'  Color="Color.Transparent" > 
+                <MudNavLink Match="NavLinkMatch.All" Ripple=false Href='/'  Icon="@Icons.Material.Filled.Home" IconColor="Color.Surface" >Home</MudNavLink>
+                <MudNavLink Match="NavLinkMatch.All" Ripple=false Href='/geolocation'  Icon="@Icons.Material.Filled.LocationOn" IconColor="Color.Surface" >Geo Localização</MudNavLink>
+                <MudNavLink Match="NavLinkMatch.All" Ripple=false Href='/datagrid-example'  Icon="@Icons.Material.Filled.List" IconColor="Color.Surface" >Data Grid</MudNavLink>
+                <MudNavLink Match="NavLinkMatch.All" Ripple=false Href='/camera'  Icon="@Icons.Material.Filled.Camera" IconColor="Color.Surface" >Reconhecimento Facial</MudNavLink>
+                @* <MudNavLink Match="NavLinkMatch.All" Ripple=false Href='/chat'  Icon="@Icons.Material.Filled.Chat" IconColor="Color.Surface" >Chat</MudNavLink>
+                <MudNavLink Ripple=false Href='/mensagens'  Icon="@Icons.Material.Filled.Mail" IconColor="Color.Surface" >Mensagens</MudNavLink>
+                <MudNavLink Ripple=false Href='/pessoas'  Icon="@Icons.Material.Filled.Face" IconColor="Color.Surface" >Pessoas</MudNavLink>
+                <MudNavLink Ripple=false Href='/grupo-discussao'  Icon="@Icons.Material.Filled.Group" IconColor="Color.Surface" >Grupos discussão</MudNavLink>
+                <MudNavLink Ripple=false Href='/tarefas'  Icon="@Icons.Material.Filled.Note" IconColor="Color.Surface" >Tarefas</MudNavLink>
+                <MudNavLink Ripple=false Href='/agenda'  Icon="@Icons.Material.Filled.CalendarMonth" IconColor="Color.Surface" >Agenda</MudNavLink>
+                <MudNavLink Ripple=false Href='/documentos'  Icon="@Icons.Material.Filled.Folder" IconColor="Color.Surface" >Documentos</MudNavLink> *@
+            </MudNavMenu>
+        </MudDrawer>
+    </MudDrawerContainer>
+</MudPaper>
 
 
-        </NavItem>
-        <NavItem Href="weather" Text="Pessoas" >
-<i class="material-icons">face</i>
+@code {
 
+    protected override void OnInitialized()
+    {
+        drawerService.OnChange += StateHasChanged;
+    }
 
-        </NavItem>
-        <NavItem Href="weather" Text="Gropos de discussão" >
-<i class="material-icons">group</i>
-
-
-        </NavItem>
-        <NavItem Href="weather" Text="Anotações" >
-<i class="material-icons">note</i>
-
-
-        </NavItem>
-        <NavItem Href="weather" Text="Agenda" >
-<i class="material-icons">calendar_month</i>
-
-
-        </NavItem>
-        <NavItem Href="weather" Text="Documentos" >
-<i class="material-icons">folder</i>
-
-
-        </NavItem>
-    </nav>
-</div>
-
+    public void Dispose()
+    {
+        drawerService.OnChange -= StateHasChanged;
+    }
+}

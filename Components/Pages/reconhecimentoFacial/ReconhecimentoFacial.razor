@@ -1,0 +1,203 @@
+@rendermode InteractiveServer
+@inject HttpClient Http
+@inject IJSRuntime JS
+   @using System.Text.Json;
+
+@page "/camera"
+<div style="display:flex;justify-content: center; align-items: center; flex-direction: column;">
+
+<h3>Reconhecimento Facial</h3>
+
+<div>
+    <video id="videoElement" autoplay style="width: 100%; max-width: 400px; border-radius: 10px;"></video>
+    <canvas id="canvasElement" style="display: none;" ></canvas>
+    <img src="@srcImage">
+</div>
+
+<div style="margin-top: 20px;">
+    <input type="text" @bind="Name" placeholder="Digite o nome" 
+           style="padding: 10px; width: 80%; max-width: 300px;" />
+</div>
+
+<div style="margin-top: 20px;">
+    <button @onclick="CapturePhotoAdd" style="padding: 10px 20px; margin: 10px; background-color: green; color: white; border: none; border-radius: 5px;">Cadastrar</button>
+    <button @onclick="CapturePhotoValidate" style="padding: 10px 20px; margin: 10px; background-color: blue; color: white; border: none; border-radius: 5px;">Validar</button>
+</div>
+<div>
+    @errr
+</div>
+@if(nomeReconhecido is not null){
+<div>
+    @if(nomeReconhecido == "Não encontrado" || nomeReconhecido == "Não encontrado foto com mais de 85% de similaridade"){
+        <span>Não foi encontrado pessoa semelhante. </span>
+    }else{
+
+        <span>    Esta pessoa é: @nomeReconhecido</span>
+    }
+</div>
+}
+
+@if (!string.IsNullOrEmpty(StatusMessage))
+{
+    <p style="margin-top: 20px; color: green;">@StatusMessage</p>
+}
+</div>
+
+@code {
+    private string Name { get; set; }
+    private string StatusMessage { get; set; }
+    private string errr = "";
+    private string mensagemApi = "";
+    private string nomeReconhecido = null;
+    private string srcImage = "";
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            Console.WriteLine("Starting camera...");
+            await JS.InvokeVoidAsync("window.startCamera");
+            Console.WriteLine("Camera started.");
+        }
+    }
+
+
+    private async Task CapturePhotoAdd()
+    {
+    if(Name is null){
+        errr = "Nome é obrigatório para o cadastro";
+        StateHasChanged();
+     await Task.Delay(4000);
+        errr = null;
+        StateHasChanged();
+        return;
+    }        
+        Console.WriteLine("Capturing photo...");
+        await JS.InvokeAsync<String>("capturePhotoToAdd", "videoElement", "canvasElement", DotNetObjectReference.Create(this));
+    }
+    private async Task CapturePhotoValidate()
+    {
+        Console.WriteLine("Capturing photo...");
+        await JS.InvokeAsync<String>("capturePhotoToValidate", "videoElement", "canvasElement", DotNetObjectReference.Create(this));
+    }
+
+[JSInvokable]
+public async Task CadastrarImageAsync(string base64)
+{
+
+    Console.WriteLine("cadastrando na base.");
+    try
+    {
+
+        var payload = new
+        {
+            name = Name,
+            photo = base64
+        };
+
+        var response = await Http.PostAsJsonAsync("https://desenvuseall.useall.com.br/reconhecimentofacialback/api/face", payload);
+
+        if (response.IsSuccessStatusCode)
+        {
+            mensagemApi = $"{Name} foi cadastrado com Sucesso!";
+            Console.WriteLine("Imagem cadastrada com sucesso!");
+        }
+        else
+        {
+ 
+            var errorContent = await response.Content.ReadAsStringAsync();
+                 var responseContent = await response.Content.ReadAsStringAsync();
+            var result = JsonSerializer.Deserialize<ApiResponse>(responseContent);
+
+            errr = result.Message;
+            
+            Console.WriteLine($"Erro ao cadastrar imagem: {response.StatusCode} - {errorContent}");
+        }
+        Name = null;
+        StateHasChanged();
+             await Task.Delay(4000);
+        errr = "";
+        mensagemApi = "";
+        StateHasChanged();
+    }
+    catch (Exception ex)
+    {
+            errr = ex.Message;
+        Console.WriteLine($"Exceção ao cadastrar imagem: {ex.Message}");
+    }
+}
+[JSInvokable]
+public async Task ValidateImage(string base64)
+{
+    Console.WriteLine("Validando...");
+    try
+    {
+        var payload = new
+        {
+            name = "",
+            photo = base64
+        };
+
+        var response = await Http.PostAsJsonAsync("https://desenvuseall.useall.com.br/reconhecimentofacialback/api/face/Validar", payload);
+
+        if (response.IsSuccessStatusCode)
+        {
+            // Deserializa a resposta JSON
+            var responseContent = await response.Content.ReadAsStringAsync();
+            var result = JsonSerializer.Deserialize<ApiResponse>(responseContent);
+
+            if (result != null && result.Content != null)
+            {
+                // Acessa o campo 'name' dentro de Content
+                nomeReconhecido = result.Content.name;
+                Console.WriteLine($"Nome reconhecido: {result.Content.name}");
+            }
+            else
+            {
+                Console.WriteLine("Conteúdo não encontrado na resposta.");
+            }
+
+            Console.WriteLine("Imagem foi reconhecida!");
+        }
+        else
+        {
+            var errorContent = await response.Content.ReadAsStringAsync();
+            Console.WriteLine($"Erro ao validar imagem: {response.StatusCode} - {errorContent}");
+        }
+        StateHasChanged();
+        await Task.Delay(4000);
+        nomeReconhecido = null;
+        StateHasChanged();
+
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Exceção ao validar imagem: {ex.Message}");
+    }
+}
+
+// Classe para mapear a resposta da API
+public class ApiResponse
+{
+    public Content Content { get; set; }
+    public string Message { get; set; }
+}
+
+public class Content
+{
+    public string name { get; set; }
+}
+    @* private async Task HandleValidate()
+    {
+        var photo = await CapturePhoto();
+        if (!string.IsNullOrEmpty(photo))
+        {
+            Console.WriteLine($"Validando: Foto={photo.Substring(0, 50)}...");
+            StatusMessage = "Validação enviada com sucesso!";
+        }
+        else
+        {
+            StatusMessage = "Erro ao capturar a foto. Tente novamente.";
+        }
+    } *@
+}

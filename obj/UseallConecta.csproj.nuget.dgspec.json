@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\saulo\\OneDrive\\Área de Trabalho\\BlazorDashboard\\UseallConecta\\UseallConecta.csproj": {}
+    "d:\\BlazorDashboard\\UseallConecta.csproj": {}
   },
   "projects": {
-    "c:\\Users\\saulo\\OneDrive\\Área de Trabalho\\BlazorDashboard\\UseallConecta\\UseallConecta.csproj": {
+    "d:\\BlazorDashboard\\UseallConecta.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\saulo\\OneDrive\\Área de Trabalho\\BlazorDashboard\\UseallConecta\\UseallConecta.csproj",
+        "projectUniqueName": "d:\\BlazorDashboard\\UseallConecta.csproj",
         "projectName": "UseallConecta",
-        "projectPath": "c:\\Users\\saulo\\OneDrive\\Área de Trabalho\\BlazorDashboard\\UseallConecta\\UseallConecta.csproj",
-        "packagesPath": "C:\\Users\\saulo\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\saulo\\OneDrive\\Área de Trabalho\\BlazorDashboard\\UseallConecta\\obj\\",
+        "projectPath": "d:\\BlazorDashboard\\UseallConecta.csproj",
+        "packagesPath": "C:\\Users\\saulo.junior\\.nuget\\packages\\",
+        "outputPath": "d:\\BlazorDashboard\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\saulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\saulo.junior\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -50,6 +50,24 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Blazorise": {
+              "target": "Package",
+              "version": "[1.7.2, )"
+            },
+            "Blazorise.Video": {
+              "target": "Package",
+              "version": "[1.7.2, )"
+            },
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[7.15.0, )"
+            },
+            "MudBlazor.Translations": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

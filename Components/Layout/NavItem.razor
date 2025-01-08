@@ -14,5 +14,5 @@
     [Parameter] public string? Style { get; set; }
 
     // Este parâmetro permite o conteúdo filho
-    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; } = builder => {};
 }

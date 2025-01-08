@@ -1,10 +1,20 @@
 using UseallConecta.Components;
+using UseallConecta.Services;
+using MudBlazor.Services;
+using MudBlazor.Translations;
+using MudBlazor;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddMudTranslations();
+
+builder.Services.AddTransient<MudLocalizer, CustomMudLocalizerImpl>();
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+builder.Services.AddMudServices();
+builder.Services.AddSingleton<DrawerService>();
+builder.Services.AddScoped<DrawerService>();
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 // 
@@ -18,7 +28,6 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 
 app.UseAntiforgery();
 

@@ -1,0 +1,56 @@
+@rendermode InteractiveServer
+@inject IJSRuntime JS
+
+@page "/geolocation"
+
+<h3>Informações de Geolocalização</h3>
+
+<p><strong>Latitude:</strong> @Latitude</p>
+<p><strong>Longitude:</strong> @Longitude</p>
+<p><strong>Localização:</strong> @Location</p>
+
+<MudButton @onclick="GetLocation">Obter Localização</MudButton>
+
+@if (IsLoading)
+{
+    <p>Obtendo geolocalização...</p>
+}
+
+@code {
+    private string Latitude { get; set; }
+    private string Longitude { get; set; }
+    private string Location { get; set; }
+    private bool IsLoading { get; set; } = false;
+
+    private async Task GetLocation()
+    {
+        try
+        {
+            IsLoading = true;
+
+            // Chama o JavaScript para obter a geolocalização
+            var geolocation = await JS.InvokeAsync<GeolocationResult>("window.getGeolocation");
+
+            if (geolocation != null)
+            {
+                Latitude = geolocation.Latitude.ToString("F6");
+                Longitude = geolocation.Longitude.ToString("F6");
+                Location = $"Latitude, Longitude: {Latitude.Replace(',','.')},{Longitude.Replace(',','.')}";
+            }
+        }
+        catch (Exception ex)
+        {
+            Location = "Erro ao obter geolocalização: " + ex.Message;
+        }
+        finally
+        {
+            IsLoading = false;
+        }
+    }
+
+    public class GeolocationResult
+    {
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+    }
+}

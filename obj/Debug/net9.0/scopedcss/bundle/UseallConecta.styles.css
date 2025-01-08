@@ -26,6 +26,10 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  height:100%;
+}
+.content[b-sgqdur24kg]{
+  padding-left:65px!important;
 }
 
 main[b-sgqdur24kg] {
@@ -410,7 +414,7 @@ article[b-sgqdur24kg] {
 
 @media (min-width: 641px) {
   .sidebar[b-ln4szb3h8e] {
-    width: 60px;
+    min-width: 50px;
     position: relative;
   }
   .navbar-toggler[b-ln4szb3h8e] {
@@ -462,6 +466,10 @@ article[b-sgqdur24kg] {
   .top-bar[b-ulto62zdex] {
     height: 80px;
   }
+}
+.mud-toolbar[b-ulto62zdex]{
+  padding-left:0!important;
+  padding-right:0!important;
 }
 /* _content/UseallConecta/Components/Pages/Home.razor.rz.scp.css */
 .tiles[b-f88alsw2yu] {

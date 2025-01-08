@@ -1,4 +1,7 @@
 is_global = true
+build_property.MudDebugAnalyzer = 
+build_property.MudAllowedAttributePattern = 
+build_property.MudIllegalParameters = 
 build_property.TargetFramework = net9.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
@@ -9,69 +12,109 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = UseallConecta
 build_property.RootNamespace = UseallConecta
-build_property.ProjectDir = c:\Users\saulo\OneDrive\Área de Trabalho\BlazorDashboard\UseallConecta\
+build_property.ProjectDir = d:\BlazorDashboard\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\saulo\OneDrive\Área de Trabalho\BlazorDashboard\UseallConecta
+build_property.MSBuildProjectDirectory = d:\BlazorDashboard
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[c:/Users/saulo/OneDrive/Área de Trabalho/BlazorDashboard/UseallConecta/Components/App.razor]
+[d:/BlazorDashboard/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/saulo/OneDrive/Área de Trabalho/BlazorDashboard/UseallConecta/Components/Pages/Counter.razor]
+[d:/BlazorDashboard/Components/Pages/agenda/Agenda.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xhZ2VuZGFcQWdlbmRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/BlazorDashboard/Components/Pages/chat/Chat.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xjaGF0XENoYXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/BlazorDashboard/Components/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/saulo/OneDrive/Área de Trabalho/BlazorDashboard/UseallConecta/Components/Pages/Error.razor]
+[d:/BlazorDashboard/Components/Pages/dataGrid/DataGrid.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xkYXRhR3JpZFxEYXRhR3JpZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/BlazorDashboard/Components/Pages/documentos/Documentos.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xkb2N1bWVudG9zXERvY3VtZW50b3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/BlazorDashboard/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/saulo/OneDrive/Área de Trabalho/BlazorDashboard/UseallConecta/Components/Pages/Teste.razor]
+[d:/BlazorDashboard/Components/Pages/geoLocalizazao/GeoLocalizacao.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xnZW9Mb2NhbGl6YXphb1xHZW9Mb2NhbGl6YWNhby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/BlazorDashboard/Components/Pages/grupoDiscussao/GrupoDiscussao.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xncnVwb0Rpc2N1c3Nhb1xHcnVwb0Rpc2N1c3Nhby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/BlazorDashboard/Components/Pages/mensagens/Mensagens.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xtZW5zYWdlbnNcTWVuc2FnZW5zLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/BlazorDashboard/Components/Pages/pessoas/Pessoas.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xwZXNzb2FzXFBlc3NvYXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/BlazorDashboard/Components/Pages/reconhecimentoFacial/ReconhecimentoFacial.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xyZWNvbmhlY2ltZW50b0ZhY2lhbFxSZWNvbmhlY2ltZW50b0ZhY2lhbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/BlazorDashboard/Components/Pages/tarefas/Tarefas.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1x0YXJlZmFzXFRhcmVmYXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/BlazorDashboard/Components/Pages/Teste.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUZXN0ZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/saulo/OneDrive/Área de Trabalho/BlazorDashboard/UseallConecta/Components/Pages/Weather.razor]
+[d:/BlazorDashboard/Components/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/saulo/OneDrive/Área de Trabalho/BlazorDashboard/UseallConecta/Components/Routes.razor]
+[d:/BlazorDashboard/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/saulo/OneDrive/Área de Trabalho/BlazorDashboard/UseallConecta/Components/_Imports.razor]
+[d:/BlazorDashboard/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/saulo/OneDrive/Área de Trabalho/BlazorDashboard/UseallConecta/Components/Common/Tile.razor]
+[d:/BlazorDashboard/Components/Common/Tile.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb21tb25cVGlsZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-dda526mhcv
 
-[c:/Users/saulo/OneDrive/Área de Trabalho/BlazorDashboard/UseallConecta/Components/Layout/MainLayout.razor]
+[d:/BlazorDashboard/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-sgqdur24kg
 
-[c:/Users/saulo/OneDrive/Área de Trabalho/BlazorDashboard/UseallConecta/Components/Layout/NavItem.razor]
+[d:/BlazorDashboard/Components/Layout/NavItem.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2SXRlbS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-5jpe8q0seo
 
-[c:/Users/saulo/OneDrive/Área de Trabalho/BlazorDashboard/UseallConecta/Components/Layout/NavMenu.razor]
+[d:/BlazorDashboard/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-t92xqjdsnj
 
-[c:/Users/saulo/OneDrive/Área de Trabalho/BlazorDashboard/UseallConecta/Components/Layout/SideBar.razor]
+[d:/BlazorDashboard/Components/Layout/SideBar.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcU2lkZUJhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-ln4szb3h8e
 
-[c:/Users/saulo/OneDrive/Área de Trabalho/BlazorDashboard/UseallConecta/Components/Layout/TopBar.razor]
+[d:/BlazorDashboard/Components/Layout/TopBar.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcVG9wQmFyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-ulto62zdex
 
-[c:/Users/saulo/OneDrive/Área de Trabalho/BlazorDashboard/UseallConecta/Components/Pages/Home.razor]
+[d:/BlazorDashboard/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-f88alsw2yu
